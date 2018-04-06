@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity CicloEscolarForm.
+    -->
+    <changeSet id="20180406182225-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ciclo_escolar_id"
+                                 baseTableName="ciclo_escolar_form"
+                                 constraintName="fk_ciclo_escolar_form_ciclo_escolar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ciclo_escolar"/>
+
+        <addForeignKeyConstraint baseColumnNames="form_id"
+                                 baseTableName="ciclo_escolar_form"
+                                 constraintName="fk_ciclo_escolar_form_form_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="form"/>
+
+    </changeSet>
+</databaseChangeLog>

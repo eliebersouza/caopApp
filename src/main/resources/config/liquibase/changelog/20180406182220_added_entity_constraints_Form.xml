@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Form.
+    -->
+    <changeSet id="20180406182220-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="renda_familiar_id"
+                                 baseTableName="form"
+                                 constraintName="fk_form_renda_familiar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="renda_familiar"/>
+
+        <addForeignKeyConstraint baseColumnNames="periodo_visita_agente_id"
+                                 baseTableName="form"
+                                 constraintName="fk_form_periodo_visita_agente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="periodicidade"/>
+
+        <addForeignKeyConstraint baseColumnNames="religiao_id"
+                                 baseTableName="form"
+                                 constraintName="fk_form_religiao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="religiao"/>
+
+        <addForeignKeyConstraint baseColumnNames="responsavel_lar_id"
+                                 baseTableName="form"
+                                 constraintName="fk_form_responsavel_lar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="responsavel_lar"/>
+
+        <addForeignKeyConstraint baseColumnNames="forms_id"
+                                 baseTableName="form_servico_publico"
+                                 constraintName="fk_form_servico_publico_forms_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="form"/>
+        <addForeignKeyConstraint baseColumnNames="servico_publicos_id"
+                                 baseTableName="form_servico_publico"
+                                 constraintName="fk_form_servico_publico_servico_publicos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="servico_publico"/>
+        
+        <addForeignKeyConstraint baseColumnNames="forms_id"
+                                 baseTableName="form_espaco_lazer"
+                                 constraintName="fk_form_espaco_lazer_forms_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="form"/>
+        <addForeignKeyConstraint baseColumnNames="espaco_lazers_id"
+                                 baseTableName="form_espaco_lazer"
+                                 constraintName="fk_form_espaco_lazer_espaco_lazers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="espaco_lazer"/>
+        
+    </changeSet>
+</databaseChangeLog>

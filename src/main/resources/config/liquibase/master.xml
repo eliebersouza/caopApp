@@ -5,6 +5,23 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182220_added_entity_Form.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182221_added_entity_RendaFamiliar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182222_added_entity_FaixaEtaria.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182223_added_entity_FaixaEtariaForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182224_added_entity_CicloEscolar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182225_added_entity_CicloEscolarForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182226_added_entity_ResidenteForaDaEscola.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182227_added_entity_MotivoEvasao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182228_added_entity_ResponsavelLar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182229_added_entity_Religiao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182230_added_entity_ServicoPublico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182231_added_entity_EspacoLazer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182232_added_entity_Periodicidade.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180406182220_added_entity_constraints_Form.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182223_added_entity_constraints_FaixaEtariaForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182225_added_entity_constraints_CicloEscolarForm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180406182226_added_entity_constraints_ResidenteForaDaEscola.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

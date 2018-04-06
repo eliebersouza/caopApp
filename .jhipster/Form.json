@@ -1,0 +1,194 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "rendaFamiliar",
+            "otherEntityName": "rendaFamiliar",
+            "otherEntityField": "faixaRenda"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "periodoVisitaAgente",
+            "otherEntityName": "periodicidade",
+            "otherEntityField": "descricao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "religiao",
+            "otherEntityName": "religiao",
+            "otherEntityField": "descricao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "responsavelLar",
+            "otherEntityName": "responsavelLar",
+            "otherEntityField": "responsavel"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": "required",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "servicoPublico",
+            "otherEntityName": "servicoPublico",
+            "otherEntityField": "descricao",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "espacoLazer",
+            "otherEntityName": "espacoLazer",
+            "otherEntityField": "descricao",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "responsavelPelaInformacao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": 3
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rua",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bairroSetor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localizacaoDoDomicilio",
+            "fieldType": "LocalizacaoDomicilio",
+            "fieldValues": "URBANA,RURAL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "situacaoDaResidencia",
+            "fieldType": "SituacaoResidencia",
+            "fieldValues": "ABERTA,FECHADA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroDaQuadra",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroDaCasa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantidadeDeResidentes",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min"
+            ],
+            "fieldValidateRulesMin": 1
+        },
+        {
+            "fieldName": "residenteFrenquentadoEscola",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "privadoDeLiberdade",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "recebeAuxilioReclusao",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO"
+        },
+        {
+            "fieldName": "familiaVisitandoPreso",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO"
+        },
+        {
+            "fieldName": "cumprimentoSemiAberto",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO"
+        },
+        {
+            "fieldName": "avaliacaoPoliciaMilitar",
+            "fieldType": "OpcaoAvaliacao",
+            "fieldValues": "EXCELENTE,BOM,REGULAR,RUIM,PESSIMO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "avaliacaoPoliciaCivel",
+            "fieldType": "OpcaoAvaliacao",
+            "fieldValues": "EXCELENTE,BOM,REGULAR,RUIM,PESSIMO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "naoAtendidoTelefonePolicia",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "naoAtendidoDelegacia",
+            "fieldType": "SimNao",
+            "fieldValues": "SIM,NAO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "avaliacaoAgenteSaude",
+            "fieldType": "OpcaoAvaliacao",
+            "fieldValues": "EXCELENTE,BOM,REGULAR,RUIM,PESSIMO"
+        },
+        {
+            "fieldName": "avaliacaoUBS",
+            "fieldType": "OpcaoAvaliacao",
+            "fieldValues": "EXCELENTE,BOM,REGULAR,RUIM,PESSIMO"
+        }
+    ],
+    "changelogDate": "20180406182220",
+    "entityTableName": "form",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "caopApp",
+    "microserviceName": "caopApp"
+}
