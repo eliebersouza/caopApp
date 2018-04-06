@@ -1,0 +1,124 @@
+entity Form {
+	responsavelPelaInformacao String required minlength(3),
+    telefone String,
+    rua String required,
+    numero String,
+    bairroSetor String,
+    localizacaoDoDomicilio LocalizacaoDomicilio required,
+    situacaoDaResidencia SituacaoResidencia required,
+    numeroDaQuadra String,
+    numeroDaCasa String,
+    quantidadeDeResidentes Integer required min(1),
+    residenteFrenquentadoEscola SimNao required,
+    privadoDeLiberdade SimNao required,
+    recebeAuxilioReclusao SimNao,
+    familiaVisitandoPreso SimNao,
+    cumprimentoSemiAberto SimNao,
+    avaliacaoPoliciaMilitar OpcaoAvaliacao required,
+    avaliacaoPoliciaCivel OpcaoAvaliacao required,
+    naoAtendidoTelefonePolicia SimNao required,
+    naoAtendidoDelegacia SimNao required,
+    avaliacaoAgenteSaude OpcaoAvaliacao,
+    avaliacaoUBS OpcaoAvaliacao
+    
+}
+entity RendaFamiliar {
+	faixaRenda String required
+}
+
+entity FaixaEtaria {
+	faixa String required
+}
+
+entity FaixaEtariaForm {
+	quantidadeFaixa Integer required
+}
+
+entity CicloEscolar {
+	ciclo String required,
+    idadeMinima Integer required,
+    idadeMaxima Integer required,
+}
+
+entity CicloEscolarForm {
+	idadeResidente Integer required
+}
+
+entity ResidenteForaDaEscola {
+	nomeDoCidadaoForaDaEscola String required minlength(3),
+    idade Integer required,
+    deficiencia SimNao required,
+    sabeLer SimNao required,
+    retomarEstudos SimNao required,
+    nomeCursoDesejado String,
+    presencialDistancia PresencialDistancia,
+    tipoCurso TipoCurso
+    observacaoOutrosMotivos String
+}
+
+entity MotivoEvasao {
+	motivo String required
+}
+entity ResponsavelLar {
+	responsavel String required
+}
+
+entity Religiao {
+	descricao String required
+}
+entity ServicoPublico {
+	descricao String required
+}
+entity EspacoLazer {
+	descricao String required
+}
+
+entity Periodicidade {
+	descricao String required
+}
+relationship ManyToOne {
+	FaixaEtariaForm{form required} to Form,
+    FaixaEtariaForm{faixaEtaria(faixa) required} to FaixaEtaria
+	CicloEscolarForm{cicloEscolar(ciclo) required} to CicloEscolar
+    CicloEscolarForm{form required} to Form
+    Form{rendaFamiliar(faixaRenda) required} to RendaFamiliar
+    ResidenteForaDaEscola{cicloEscolar(ciclo) required} to CicloEscolar
+    ResidenteForaDaEscola{motivoEvasao(motivo) required} to MotivoEvasao
+    ResidenteForaDaEscola{form required} to Form
+    Form{periodoVisitaAgente(descricao) required} to Periodicidade
+    Form{religiao(descricao) required} to Religiao
+    Form{responsavelLar(responsavel) required} to ResponsavelLar
+}
+relationship ManyToMany{
+	Form{servicoPublico(descricao) required} to ServicoPublico
+    Form{espacoLazer(descricao)} to EspacoLazer
+}
+enum OpcaoAvaliacao {
+	EXCELENTE, BOM, REGULAR, RUIM, PESSIMO
+}
+enum TipoCurso {
+	TECNICO, GRADUACAO, POS_GRADUACAO
+}
+enum PresencialDistancia {
+	PRESENCIAL, DISTANCIA
+}
+enum SimNao {
+	SIM, NAO
+}
+
+enum LocalizacaoDomicilio {
+	URBANA, RURAL
+}
+enum SituacaoResidencia {
+	ABERTA, FECHADA
+}
+
+// Set pagination options
+paginate all with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with caopApp
