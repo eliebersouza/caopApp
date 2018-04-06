@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "form",
+            "otherEntityName": "form",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "faixaEtaria",
+            "otherEntityName": "faixaEtaria",
+            "otherEntityField": "faixa"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "quantidadeFaixa",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20180406182223",
+    "entityTableName": "faixa_etaria_form",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "caopApp",
+    "microserviceName": "caopApp"
+}

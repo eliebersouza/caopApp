@@ -38,6 +38,21 @@ public class CacheConfiguration {
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
             cm.createCache("oAuth2Authentication", jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.Form.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.Form.class.getName() + ".servicoPublicos", jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.Form.class.getName() + ".espacoLazers", jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.RendaFamiliar.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.FaixaEtaria.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.FaixaEtariaForm.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.CicloEscolar.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.CicloEscolarForm.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.ResidenteForaDaEscola.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.MotivoEvasao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.ResponsavelLar.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.Religiao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.ServicoPublico.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.EspacoLazer.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mpro.caopapp.domain.Periodicidade.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
